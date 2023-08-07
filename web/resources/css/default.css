@@ -1,0 +1,75 @@
+/* Importaciones */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+/* Barra de navegacion */
+.navbar{
+    padding: 2rem;
+    background-color: #f5f6f7;
+    .navbar-collapse{
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* Pie de página */
+.seccion-oscura{
+    background-color: black;
+}
+
+footer{
+    min-height: 500px;
+    .footer-logo{
+        height: 80px;
+        width: 80px;
+        margin: 10px;
+    }
+    .footer-texto{
+        font-size: 1.5rem;
+        padding: 20px;
+        margin-bottom: 30px;
+        font-family: 'Quicksand', sans-serif;
+    }
+    .iconos-redes-sociales{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+        margin: 2px;
+    }
+    .iconos-redes-sociales i{
+        transition: all 0.2s ease-in;
+        color: white;
+        font-size: 1.5rem;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 50%;
+        border: 2px solid white;
+        
+    }
+    .iconos-redes-sociales a:hover i {
+        color: black;
+        background-color: white;
+        border: 2px solid rgb(13, 110, 253);
+    }
+
+    .derechos-de-autor{
+        font-size: 15px;
+        color: #aeaeae;
+        padding: 20px;
+    }
+}
+
+
+
+
+/* Adaptable responsivo */
+@media screen and (max-width: 767px){
+    /* para ocultar el icono java cuando el menú es reducido en dispositivos menores a 767px
+    .navbar-brand{
+    display: none;
+}
+    */
+
+}
