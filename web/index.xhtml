@@ -6,6 +6,19 @@
     <body>
 
         <ui:composition template="./WEB-INF/PlantillaWeb.xhtml">
+            <ui:define name="content">
+                <!-- Sección Hero -->
+                <section class="hero align-items-stretch">
+                    <div class="hero-principal d-flex flex-column align-items-center justify-content-center">
+                    <img class="hero-imagen" src="resources/Imagenes/ImagenesHero/foto.png" alt="foto cv"/>
+                    <h1>#{literalhero.hero1}</h1>
+                    <h2>#{literalhero.hero2}</h2>
+                    </div>
+                    <div class="hero-inferior">
+                        <img class="hero-inferior-imagen img-fluid" src="resources/Imagenes/ImagenesHero/tecnologias.png" alt="Logos tecnologías"/>
+                    </div>
+                </section>
+            </ui:define>
 
         </ui:composition>
 

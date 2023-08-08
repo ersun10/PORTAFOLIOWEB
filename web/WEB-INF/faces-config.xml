@@ -34,5 +34,13 @@
             <base-name>Literales.literalesHeader</base-name>
             <var>literalheader</var>
         </resource-bundle>
+        <resource-bundle>
+            <base-name>Literales.literalesFooter</base-name>
+            <var>literalfooter</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>Literales.literalesHero</base-name>
+            <var>literalhero</var>
+        </resource-bundle>
     </application>
 </faces-config>

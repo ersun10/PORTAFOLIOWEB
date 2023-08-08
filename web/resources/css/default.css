@@ -1,5 +1,38 @@
+
+
 /* Importaciones */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+
+/* Reglas generales */
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-family: 'Rubik Dirt', cursive;
+}
+
+.hero-principal{
+    padding: 3rem;
+    .hero-imagen{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid black;
+        margin: 20px;
+    }
+}
+
+.hero-principal h2{
+    color: #615151;
+    font-size: 1.5rem;
+}
 
 /* Barra de navegacion */
 .navbar{
@@ -46,7 +79,7 @@ footer{
         margin: 10px;
         border-radius: 50%;
         border: 2px solid white;
-        
+
     }
     .iconos-redes-sociales a:hover i {
         color: black;
@@ -61,8 +94,16 @@ footer{
     }
 }
 
+/* Seccion hero */
+.hero{
+    background-color: #f5f6f7;
+    min-height: 450px;
+    text-align: center;
+}
 
-
+.hero-inferior{
+    margin-bottom: 20px;
+}
 
 /* Adaptable responsivo */
 @media screen and (max-width: 767px){
@@ -72,4 +113,10 @@ footer{
 }
     */
 
+}
+
+@media screen and (min-width: 700px){
+    .hero-inferior-imagen{
+       max-width: 600px; 
+    }
 }
