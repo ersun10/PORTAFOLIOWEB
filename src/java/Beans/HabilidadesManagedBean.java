@@ -4,16 +4,25 @@
  */
 package Beans;
 
+import Objects.Habilidad;
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  *
  * @author luisj
  */
 public class HabilidadesManagedBean {
-
+    
     /**
      * Creates a new instance of HabilidadesManagedBean
      */
     public HabilidadesManagedBean() {
+    }
+    
+    public List<Habilidad> getAll(){
+        List<Habilidad> lista = new ArrayList<>();
+        return lista;
     }
     
 }

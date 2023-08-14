@@ -23,11 +23,6 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
-    <managed-bean>
-        <managed-bean-name>habilidadesManagedBean</managed-bean-name>
-        <managed-bean-class>Beans.HabilidadesManagedBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
     
     <application>
         <resource-bundle>
@@ -42,5 +37,25 @@
             <base-name>Literales.literalesHero</base-name>
             <var>literalhero</var>
         </resource-bundle>
+        <resource-bundle>
+            <base-name>Config.configuracion</base-name>
+            <var>config</var>
+        </resource-bundle>
     </application>
+    <managed-bean>
+        <managed-bean-name>habilidadesManagedBean</managed-bean-name>
+        <managed-bean-class>Beans.HabilidadesManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>informacionManagedBean</managed-bean-name>
+        <managed-bean-class>Beans.InformacionManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>experienciasManagedBean</managed-bean-name>
+        <managed-bean-class>Beans.ExperienciasManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>

@@ -18,6 +18,18 @@ h1{
     font-family: 'Rubik Dirt', cursive;
 }
 
+.seccion-titulo{
+    font-size: 2rem;
+    padding: 15px 0;
+    font-family: 'Rubik Dirt', cursive;
+}
+
+.seccion-texto{
+    font-size: 1.2rem;
+}
+
+/* Seccion Hero */
+
 .hero-principal{
     padding: 3rem;
     .hero-imagen{
@@ -44,10 +56,23 @@ h1{
     }
 }
 
+/* Sobre mí */
+.sobre-mi{
+    height: 500px;
+    padding: 10px;
+}
+
+.sobre-mi .contenedor{
+    max-width: 600px;
+    text-align: center;
+}
+
 /* Pie de página */
 .seccion-oscura{
-    background-color: black;
+    background-color: #1b1b32;
+    color:white;
 }
+
 
 footer{
     min-height: 500px;
