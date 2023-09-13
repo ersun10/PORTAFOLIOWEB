@@ -3,6 +3,7 @@
 /* Importaciones */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
 
 
 /* Reglas generales */
@@ -130,6 +131,38 @@ footer{
     margin-bottom: 20px;
 }
 
+/* Sección mi CV */
+.cv-titles{
+    font-family: 'Inconsolata', monospace;
+    padding-bottom: 20px;
+}
+.cv-info{
+    background-color: #D6DBDF;
+    min-height: 200px;
+    padding-bottom: 50px;
+}
+
+.cv-objetivos{
+    background-color: #f5f6f7;
+    min-height: 150px;
+    padding-bottom: 20px;
+}
+
+.cv-expe{
+    background-color: #D6DBDF;
+    padding-bottom: 20px;
+}
+
+.cv-habilidades{
+    background-color: #f5f6f7;
+    padding-bottom: 20px;
+}
+
+.cv-tecno{
+    background-color: #D6DBDF;
+    padding-bottom: 20px;
+}
+
 /* Adaptable responsivo */
 @media screen and (max-width: 767px){
     /* para ocultar el icono java cuando el menú es reducido en dispositivos menores a 767px
@@ -142,6 +175,6 @@ footer{
 
 @media screen and (min-width: 700px){
     .hero-inferior-imagen{
-       max-width: 600px; 
+        max-width: 600px;
     }
 }

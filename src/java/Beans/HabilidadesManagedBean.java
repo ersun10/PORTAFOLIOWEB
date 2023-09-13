@@ -5,8 +5,8 @@
 package Beans;
 
 import Objects.Habilidad;
+import RestClients.HabilidadRestClient;
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  *
@@ -14,15 +14,14 @@ import java.util.ArrayList;
  */
 public class HabilidadesManagedBean {
     
-    /**
-     * Creates a new instance of HabilidadesManagedBean
-     */
+    private final HabilidadRestClient client; 
+    
     public HabilidadesManagedBean() {
+        client = new HabilidadRestClient();
     }
     
     public List<Habilidad> getAll(){
-        List<Habilidad> lista = new ArrayList<>();
-        return lista;
+        return this.client.getAll();
     }
     
 }
