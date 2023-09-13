@@ -59,12 +59,23 @@ h1{
 
 /* Sobre mí */
 .sobre-mi{
-    height: 500px;
-    padding: 10px;
+    height: 600px;
+    padding: 20px;
 }
 
 .sobre-mi .contenedor{
     max-width: 600px;
+    text-align: center;
+}
+
+/* Sobre mi portafolio */
+.sobre-mi-portafolio{
+    height: 1550px;
+    padding: 20px;
+}
+
+.sobre-mi-portafolio .contenedor{
+    max-width: 800px;
     text-align: center;
 }
 
@@ -137,13 +148,16 @@ footer{
     padding-bottom: 20px;
 }
 .cv-info{
-    background-color: #D6DBDF;
+    background-color: #f5f6f7;
     min-height: 200px;
     padding-bottom: 50px;
 }
-
+.cv-formacion{
+   background-color: #f5f6f7;
+    padding-bottom: 20px;
+}
 .cv-objetivos{
-    background-color: #f5f6f7;
+    background-color: #D6DBDF;
     min-height: 150px;
     padding-bottom: 20px;
 }

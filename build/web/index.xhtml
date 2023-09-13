@@ -35,6 +35,69 @@
                         </p>
                     </div>
                 </section>
+                <section class="sobre-mi-portafolio seccion-oscura">
+                    <div class="contenedor">
+                        <h2 class="seccion-titulo">Sobre mi portafolio</h2>
+                        <p class="seccion-texto">
+                            En la creación de este portafolio, he intentado poner en práctica un poco todo lo que he ido
+                            aprendiendo en los libros que he terminado. Tengo que decir, que no he querido usar frameworks
+                            tipo Hibernate ni Spring puesto que son los siguientes libros que voy a leer y quería hacer todo
+                            de la manera mas manual posible.
+                            Para hacer un portafolio un poco diferente al resto que hay por internet, decidí dividir el 
+                            proyecto en tres partes: un servicio RestFull para controlar y administrar la base de datos,
+                            una aplicación de escritorio hecha en swing con la que consumo y administro ese servicio
+                            RestFull y por último esta página web que también consume dicho servicio, de tal forma, que
+                            con la aplicación de escritorio modifico los datos que aparecerán en esta página web.
+                            A continuación describiré un poco cada una de las partes.
+                            <br></br><br></br>
+                            <span><b>El servicio web RestFull</b></span><br></br>
+                            Para el servicio, he usado la api JAX-RS junto con JPA para la persistencia. Dicho servicio
+                            lo tengo alojado en una Raspberry Pi donde tengo montado un servidor
+                            apache TomEE junto con una base de datos MySql.
+                            Para la seguridad de este servicio web, he optado por usar la tecnología JWT para la autenticación,
+                            junto con una autorización basada en roles para que solo el administrador pueda realizar ciertas
+                            tareas del CRUD. Para el inicio de sesión desde la aplicación swing, he optado por usar un login
+                            basado en hash con Salt. El patrón de diseño seguido, es un patrón MVC junto con patrón DTO y una
+                            estructura basada en servicios, repositorios y mappers.
+                            <br></br><br></br>
+                            <span><b>La aplicación de escritorio</b></span><br></br>
+                            En la aplicación swing, todos los formularios están hechos a mano, no he usado Forms Designers
+                            para evitar código innecesario y así quedarme con una buena base de las partes del código.
+                            Si bien es cierto que no me he explayado en el diseño, si que he intentado hacer cada panel 
+                            distinto al resto para hacer lo mismo de diferentes formas he ir repasando mas conceptos.
+                            Tengo que decir que en esta aplicación, no he usado validaciones para fechas, teléfonos, etc;
+                            puesto que no quería darle mas tiempo del necesario, en otras aplicaciones si que he usado
+                            validaciones mediante expresiones regulares. Para consumir el servicio RestFull, no he usado
+                            JERSEY-CLIENT, para hacer de nuevo todo lo mas manual posible, por lo que opté por usar las
+                            herramientas que me da el JDK de Java, consumiendo los EndPoints con java.net.HttpURLConnection
+                            y usando la librería GSON para el parseo de los objetos a Json y viceversa.
+                            <br></br><br></br>
+                            <span><b>La página web</b></span><br></br>
+                            La última parte de mi proyecto Portafolio, es esta página web. Debo decir, que para hacerla he
+                            seguido un tutorial en el que he aprendido lo básico sobre estructuración web, tecnología 
+                            responsiva y bootstrap, usando las tecnologías HTML y CSS.
+                            Esta vez si que uso JERSEY-CLIENT para el consumo de los EndPoints del servicio web.
+                            Para el diseño, he usado la tecnología Facelets usando plantilla personalizada.
+                            La estructura de esta página se ha realizado usando clientes Rest para el consumo de los datos,
+                            beans de apoyo (ManagedBeans) y archivos de propiedades para la configuración de la conexión 
+                            hacia mi servidor y también literales que uso para títulos en la página, de este modo
+                            si quiero cambiar ciertos textos de esta web, no necesito cambiar nada en el código, me basta
+                            solo con cambiar las variables en dichos archivos .properties.
+                            <br></br><br></br>
+                            <span><b>Conclusión</b></span><br></br>
+                            En este proyecto mi intención era acercarme un poco a lo que es un trabajo de un desarrollador
+                            FullStack, tocando tanto el Front-End como el Back-End y también aplicación de escritorio.
+                            Obviamente no tengo un conocimiento extenso de cada tema, pero quise probar si podía conseguir
+                            lo que me propusiera.
+                            La verdad he aprendido mucho en la realización de este portafolio personal y me ha demostrado
+                            que la programación me encanta y quiero mejorar, seguir formándome para adaptarme y ser capaz
+                            de realizar cualquier proyecto. 
+                            Ahora lo que necesito es una empresa que me quiera dar la oportunidad de empezar a adquirir 
+                            experiencia en el sector y me siga dando formación hasta convertirme en FullStack y, si es
+                            posible, formación en ciberseguridad, puesto que es mi objetivo final, ser pentester!!
+                        </p>
+                    </div>
+                </section>
             </ui:define>
 
         </ui:composition>
