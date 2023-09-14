@@ -9,7 +9,7 @@
         <ui:composition template="./WEB-INF/PlantillaWeb.xhtml">
 
             <ui:define name="content">
-                <div class="cv-info row-12 row-md-6 row-sm-2">
+                <div class="cv-info row-12 row-md-6 row-sm-4">
                     <h2 align="center" class="cv-titles">INFORMACIÓN</h2>
                     <i class="bi bi-person-fill"></i>&#160;#{informacionManagedBean.nombre}
                     <br><i class="bi bi-geo-alt-fill"></i>&#160;#{informacionManagedBean.localidad}</br>
@@ -19,15 +19,22 @@
                     <br><i class="bi bi-envelope-at-fill"></i>&#160;#{informacionManagedBean.email}</br> 
                     <br><i class="bi bi-telephone-fill"></i>&#160;#{informacionManagedBean.telefono}</br> 
                 </div>
-                <div class="cv-objetivos row-12 row-md-6 row-sm-2">
+                <div class="cv-objetivos row-12 row-md-6 row-sm-4">
                     <h2 align="center" class="cv-titles">OBJETIVO</h2>
                     <p>#{informacionManagedBean.objetivos}</p>
                 </div>
-                <div class="cv-formacion row-12 row-md-6 row-sm-2">
+                <div class="cv-formacion row-12 row-md-6 row-sm-4">
                     <h2 align="center" class="cv-titles">FORMACIÓN</h2>
-
+                    <c:forEach var="formacion" items="#{formacionManagedBean.all}">
+                        <p align="center">
+                            <b><i class="bi bi-cast"></i></b>  <i>#{formacion.centro}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-bar-chart-fill"></i></b>  <i>#{formacion.localidad}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-bar-chart-fill"></i></b>  <i>#{formacion.fechaIni}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-bar-chart-fill"></i></b>  <i>#{formacion.fechaFin}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        </p>
+                    </c:forEach>
                 </div>
-                <div class="cv-expe row-12 row-md-6 row-sm-2">
+                <div class="cv-expe row-12 row-md-6 row-sm-4">
                     <h2 align="center" class="cv-titles">EXPERIENCIAS</h2>
                     <c:forEach var="expe" items="#{experienciasManagedBean.all}">
                         <p align="center">
@@ -40,7 +47,7 @@
                         <hr></hr>
                     </c:forEach>
                 </div>
-                <div class="cv-habilidades row-12 row-md-6 row-sm-2">
+                <div class="cv-habilidades row-12 row-md-6 row-sm-4">
                     <h2 align="center" class="cv-titles">HABILIDADES</h2>
                     <c:forEach var="habilidad" items="#{habilidadesManagedBean.all}">
                         <p align="center">
@@ -49,23 +56,23 @@
                         </p>
                     </c:forEach>
                 </div>
-                <div class="cv-tecno row-12 row-md-6 row-sm-2">
+                <div class="cv-tecno row-12 row-md-6 row-sm-4">
                     <h2 align="center" class="cv-titles">TECNOLOGÍAS</h2>
-                    <!--<c:forEach var="tecnologia" items="">
+                    <c:forEach var="tecnologia" items="#{tecnologiasManagedBean.all}">
                         <p align="center">
-                            <b><i class="bi bi-cast"></i></b>  <i></i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <b><i class="bi bi-bar-chart-fill"></i></b>  <i></i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-cast"></i></b>  <i>#{tecnologia.nombre}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-bar-chart-fill"></i></b>  <i>#{tecnologia.nivel}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <img width="50px" height="50px" src="#{tecnologia.imagen}" alt="#{tecnologia.nombre}"/>
                         </p>
-                    </c:forEach> -->
+                    </c:forEach>
                 </div>
-                <div class="cv-otros row-12 row-md-6 row-sm-2">
+                <div class="cv-otros row-12 row-md-6 row-sm-4">
                     <h2 align="center" class="cv-titles">OTROS</h2>
-                    <!--<c:forEach var="tecnologia" items="">
+                    <c:forEach var="otro" items="#{otrosManagedBean.all}">
                         <p align="center">
-                            <b><i class="bi bi-cast"></i></b>  <i></i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <b><i class="bi bi-bar-chart-fill"></i></b>  <i></i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-cast"></i></b>  <i>#{otro.nombre}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                         </p>
-                    </c:forEach> -->
+                    </c:forEach>
                 </div>
             </ui:define>
 

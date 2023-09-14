@@ -178,13 +178,28 @@ footer{
 }
 
 /* Adaptable responsivo */
-@media screen and (max-width: 767px){
+@media screen and (max-width: 992px){
     /* para ocultar el icono java cuando el menú es reducido en dispositivos menores a 767px
     .navbar-brand{
     display: none;
 }
     */
+    .sobre-mi-portafolio{
+        min-height: 1800px;
+    }
+}
 
+@media screen and (max-width: 768px){
+    .sobre-mi-portafolio{
+       min-height: 2500px; 
+    } 
+}
+
+@media screen and(max-width: 524px){
+    .sobre-mi-portafolio{
+        min-height: 8000px;
+    }
+    
 }
 
 @media screen and (min-width: 700px){
