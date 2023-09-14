@@ -10,6 +10,10 @@
 
             <ui:define name="content">
                 <div class="cv-info">
+                    <i>Podéis descargar el currículum completo desde <a href="resources/Documentos/cv.pdf" download="CV-LuisJose-Java-Junior">aquí</a>.</i>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                     <h2 align="center" class="cv-titles">INFORMACIÓN</h2>
                     <i class="bi bi-person-fill"></i>&#160;#{informacionManagedBean.nombre}
                     <br><i class="bi bi-geo-alt-fill"></i>&#160;#{informacionManagedBean.localidad}</br>
@@ -27,10 +31,10 @@
                     <h2 align="center" class="cv-titles">FORMACIÓN</h2>
                     <c:forEach var="formacion" items="#{formacionManagedBean.all}">
                         <p align="center">
-                            <b><i class="bi bi-cast"></i></b>  <i>#{formacion.centro}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <b><i class="bi bi-bar-chart-fill"></i></b>  <i>#{formacion.localidad}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <b><i class="bi bi-bar-chart-fill"></i></b>  <i>#{formacion.fechaIni}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <b><i class="bi bi-bar-chart-fill"></i></b>  <i>#{formacion.fechaFin}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-mortarboard-fill"></i></b>  <i>#{formacion.centro}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-geo-alt-fill"></i></b>  <i>#{formacion.localidad}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-calendar-check-fill"></i></b>  <i>#{formacion.fechaIni}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-calendar-x-fill"></i></b>  <i>#{formacion.fechaFin}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                         </p>
                     </c:forEach>
                 </div>
@@ -41,8 +45,8 @@
                             <b>Puesto: </b><i>#{expe.puesto}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                             <b>Empresa: </b> <i>#{expe.empresa}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                             <b>Localidad: </b> <i>#{expe.localidad}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <br><b>Fecha de inicio: </b><i>#{expe.fechaIni}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <b>Fecha de finalización: </b><i>#{expe.fechaFin}</i></br>
+                            <br><b>Inicio: </b><i>#{expe.fechaIni}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                <b>Finalización: </b><i>#{expe.fechaFin}</i></br>
                         </p>
                         <hr></hr>
                     </c:forEach>
@@ -60,7 +64,7 @@
                     <h2 align="center" class="cv-titles">TECNOLOGÍAS</h2>
                     <c:forEach var="tecnologia" items="#{tecnologiasManagedBean.all}">
                         <p align="center">
-                            <b><i class="bi bi-cast"></i></b>  <i>#{tecnologia.nombre}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-code-square"></i></b>  <i>#{tecnologia.nombre}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                             <b><i class="bi bi-bar-chart-fill"></i></b>  <i>#{tecnologia.nivel}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                             <img width="50px" height="50px" src="#{tecnologia.imagen}" alt="#{tecnologia.nombre}"/>
                         </p>
@@ -70,7 +74,7 @@
                     <h2 align="center" class="cv-titles">OTROS</h2>
                     <c:forEach var="otro" items="#{otrosManagedBean.all}">
                         <p align="center">
-                            <b><i class="bi bi-cast"></i></b>  <i>#{otro.nombre}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <b><i class="bi bi-plus"></i></b>  <i>#{otro.nombre}</i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                         </p>
                     </c:forEach>
                 </div>
