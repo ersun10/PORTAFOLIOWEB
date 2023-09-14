@@ -58,4 +58,24 @@
         <managed-bean-class>Beans.ExperienciasManagedBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>formacionManagedBean</managed-bean-name>
+        <managed-bean-class>Beans.FormacionManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>otrosManagedBean</managed-bean-name>
+        <managed-bean-class>Beans.OtrosManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>tecnologiasManagedBean</managed-bean-name>
+        <managed-bean-class>Beans.TecnologiasManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>proyectosManagedBean</managed-bean-name>
+        <managed-bean-class>Beans.ProyectosManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>
