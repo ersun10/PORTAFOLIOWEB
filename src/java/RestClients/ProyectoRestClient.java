@@ -45,7 +45,7 @@ public class ProyectoRestClient {
         baseUrl = "http://" + propiedades.getProperty("ip") + ":" + propiedades.getProperty("puerto") + propiedades.getProperty("base");
 
         cliente = ClientBuilder.newClient();
-        webTarget = cliente.target(baseUrl).path("otros");
+        webTarget = cliente.target(baseUrl).path("proyectos");
     }
     
     public List<Proyecto> getAll(){

@@ -1,14 +1,42 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <body>
 
         <ui:composition template="./WEB-INF/PlantillaWeb.xhtml">
 
             <ui:define name="content">
-                content
+                <div class="proyectos-recientes seccion-clara d-flex flex-column">
+                    <h2 class="seccion-titulo texto-negro">Mis proyectos</h2>
+                    <h3 class="seccion-descripcion">Estas son algunas de las aplicaciones que he creado..</h3>
+                    <!-- Galeria de Proyectos -->
+                    <div class="container text-center proyectos-contenedor">
+                        <div class="row">
+                            <c:forEach var="project" items="#{proyectosManagedBean.all}">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="proyecto">
+                                        <img src="resources/Imagenes/Proyectos/#{project.nombre}/principal.jpg" alt="#{project.nombre}"/>
+                                        <div class="overlay">
+                                            <p>#{project.descripcion}</p>
+                                            <!-- Aquí pondré los iconos de github y del tipo de aplicacion -->
+                                            <div class="iconos-contenedor">
+                                                <a href="https://github.com/ersun10/#{project.nombre}" target="_blank" rel="noopener noreferrer">
+                                                    <i class="bi bi-github"></i>
+                                                </a>
+                                                <a href="" target="_blank" rel="noopener noreferrer">
+                                                    <i class="bi bi-laptop"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </div>
             </ui:define>
 
         </ui:composition>
