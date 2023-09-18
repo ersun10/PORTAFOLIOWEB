@@ -1,17 +1,74 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <body>
 
         <ui:composition template="./WEB-INF/PlantillaWeb.xhtml">
 
             <ui:define name="content">
-                content
+                <div class="contacto" style="padding: 20px;">
+                    <div class="container text-center d-flex justify-content-evenly">
+                        <div class="row">
+                            <div class="col-12 mb-3 justify-content-center">
+                                <div class="col-12">
+                                    <i class="bi bi-whatsapp" style="font-size: 2.5rem;">646 874 139</i>
+                                </div>
+                                <p style="margin: 20px;"><b>
+                                        Pueden usar el siguiente formulario para enviarme un mensaje rápido <br></br>
+                                        o bien mandarme un email personalizado pulsando en el icono<br></br>
+                                        del correo situado al pie de esta página. Gracias por su tiempo<br></br>
+                                        y espero recibir su mensaje <i class="bi bi-emoji-smile-fill"></i>
+                                    </b></p>
+                                <form style="margin-top: 40px;" id="my-form" action="https://formspree.io/f/xqkvlgqp" method="POST">
+                                    <label class="form-label">Email de contacto</label>
+                                    <input type="email" class="form-control" name="email" placeholder="name@example.com" />
+                                    <label class="form-label" style="margin-top: 20px;">Mensaje</label>
+                                    <textarea class="form-control" name="message" cols="70" rows="15"></textarea>
+                                    <button id="my-form-button" class="btn btn-secondary" style="margin-top: 20px;">Enviar <i class="bi bi-arrow-right-circle-fill"></i></button>
+                                    <p id="my-form-status"></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </ui:define>
 
         </ui:composition>
 
+        <script>
+            var form = document.getElementById("my-form");
+
+            async function handleSubmit(event) {
+                event.preventDefault();
+                var status = document.getElementById("my-form-status");
+                var data = new FormData(event.target);
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        status.innerHTML = "Thanks for your submission!";
+                        form.reset()
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                            } else {
+                                status.innerHTML = "Oops! There was a problem submitting your form";
+                            }
+                        })
+                    }
+                }).catch(error => {
+                    status.innerHTML = "Oops! There was a problem submitting your form";
+                });
+            }
+            form.addEventListener("submit", handleSubmit)
+        </script>
     </body>
 </html>
