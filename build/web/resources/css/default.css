@@ -271,13 +271,6 @@ footer{
     color: black;
 }
 
-.text-izq{
-   text-align: left; 
-}
-
-.text-der{
-   text-align: right; 
-}
 /* Adaptable responsivo */
 @media screen and (max-width: 992px){
     /* para ocultar el icono java cuando el menú es reducido en dispositivos menores a 767px
