@@ -9,7 +9,7 @@ package Objects;
  * @author luisj
  */
 public class Proyecto {
-    
+
     private Integer id;
     private String nombre;
     private String descripcion;
@@ -67,4 +67,8 @@ public class Proyecto {
         this.carpetaImagenes = carpetaImagenes;
     }
 
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
 }

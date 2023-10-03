@@ -155,6 +155,7 @@ footer{
     padding-bottom: 20px;
 }
 .cv-info{
+    text-align: center;
     background-color: #f5f6f7;
     min-height: 200px;
     padding-bottom: 50px;
@@ -266,7 +267,17 @@ footer{
     font-family: 'Playfair Display', serif;
 }
 
+.bi-whatsapp{
+    color: black;
+}
 
+.text-izq{
+   text-align: left; 
+}
+
+.text-der{
+   text-align: right; 
+}
 /* Adaptable responsivo */
 @media screen and (max-width: 992px){
     /* para ocultar el icono java cuando el menú es reducido en dispositivos menores a 767px

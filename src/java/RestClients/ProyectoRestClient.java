@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response;
  * @author luisj
  */
 public class ProyectoRestClient {
-    
+
     private final String pathConfiguracion;
     private final Properties propiedades;
     private final Config config;
@@ -47,12 +47,21 @@ public class ProyectoRestClient {
         cliente = ClientBuilder.newClient();
         webTarget = cliente.target(baseUrl).path("proyectos");
     }
-    
-    public List<Proyecto> getAll(){
+
+    public List<Proyecto> getAll() {
         List<Proyecto> lista = new ArrayList<>();
         WebTarget resource = webTarget;
-        lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Proyecto>>(){});
+        lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Proyecto>>() {
+        });
         return lista;
     }
-    
+
+    public Proyecto getById(int id) {
+        Proyecto proyecto = new Proyecto();
+        WebTarget resource = cliente.target(baseUrl).path("proyectos/" + id);
+        proyecto = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<Proyecto>() {
+        });
+        return proyecto;
+    }
+
 }

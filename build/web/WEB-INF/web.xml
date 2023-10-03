@@ -13,16 +13,16 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>ServletDetalle</servlet-name>
-        <servlet-class>Servlets.ServletDetalle</servlet-class>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>Servlets.Controller</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletDetalle</servlet-name>
-        <url-pattern>/servletDetalle</url-pattern>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/controller</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
