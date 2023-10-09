@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Marker+Hatch&display=swap');
 
 
 /* Reglas generales */
@@ -269,6 +270,23 @@ footer{
 
 .bi-whatsapp{
     color: black;
+}
+
+.proyecto-title{
+    margin-top: 20px;
+    font-family: 'Rubik Marker Hatch', cursive;
+}
+
+.proyecto-info{
+    padding-top: 30px;
+    background-color: #f5f6f7;
+    min-height: 450px;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.proyecto-imagenes{
+    background-color: #f5f6f7;
 }
 
 /* Adaptable responsivo */

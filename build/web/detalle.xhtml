@@ -7,15 +7,26 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <body>
-            <ui:composition template="./WEB-INF/PlantillaWeb.xhtml">
+        <ui:composition template="./WEB-INF/PlantillaWeb.xhtml">
 
-                <ui:define name="content">
-                    <div>
-                     
+            <ui:define name="content">
+                <h2 class="proyecto-title" style="text-align: center;">#{proyectosManagedBean.getById(request.getParameter("id"))}</h2>
+                <div class="container d-flex proyecto-imagenes">
+                    <div class="row proyecto-imagenes" style="margin: 20px;">
+                        <c:forEach var='item' items='#{imagenesManagedBean.getImagenes(application.getRealPath("") ,proyectosManagedBean.getById(request.getParameter("id")))}'>
+                            <img style="margin-bottom: 10px;" class="col-lg-3 col-md-6 col-xs-12" src="resources/Imagenes/Proyectos/#{item.nombre}" alt="#{item.nombre}"/>
+                        </c:forEach>
                     </div>
-                </ui:define>
+                </div>
+                <div class="info-proyecto">
+                    <p class="proyecto-info">
+                        <b><u>#{proyectosManagedBean.descripcion}</u></b><br/><br/>
+                        <i class="bi bi-device-ssd-fill">&#160;&#160;#{proyectosManagedBean.tipo}</i><br/><br/>
+                        #{proyectosManagedBean.carpetaImagenes}
+                    </p>
+                </div>
+            </ui:define>
+        </ui:composition>
 
-            </ui:composition>
-
-        </body>
+    </body>
 </html>

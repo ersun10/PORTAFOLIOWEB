@@ -78,4 +78,9 @@
         <managed-bean-class>Beans.ProyectosManagedBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>imagenesManagedBean</managed-bean-name>
+        <managed-bean-class>Beans.ImagenesManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>
