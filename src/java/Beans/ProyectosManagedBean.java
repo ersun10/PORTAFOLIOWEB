@@ -54,10 +54,5 @@ public class ProyectosManagedBean {
     public String getCarpetaImagenes() {
         return carpetaImagenes;
     }
-    
-    public List<Imagen> getImagenes(){
-        List<Imagen> lista = new ArrayList<>();
-        
-        return lista;
-    }
+
 }
