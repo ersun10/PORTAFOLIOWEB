@@ -162,7 +162,7 @@ footer{
     padding-bottom: 50px;
 }
 .cv-formacion{
-   background-color: #f5f6f7;
+    background-color: #f5f6f7;
     padding-bottom: 20px;
 }
 .cv-objetivos{
@@ -188,12 +188,12 @@ footer{
 
 /* Proyectos */
 .proyectos-recientes{
-  padding: 40px;  
+    padding: 40px;
 }
 
 .seccion-clara{
-   color: black;
-   background-color: white;
+    color: black;
+    background-color: white;
 }
 
 .texto-negro{
@@ -215,7 +215,7 @@ footer{
 
 .proyectos-contenedor{
     padding-top: 60px;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
 }
 
 .overlay{
@@ -278,15 +278,21 @@ footer{
 }
 
 .proyecto-info{
-    padding-top: 30px;
+    padding: 30px 20px;
     background-color: #f5f6f7;
     min-height: 450px;
     text-align: left;
-    padding-left: 40px;
 }
 
 .proyecto-imagenes{
     background-color: #f5f6f7;
+}
+
+.slider-proyectos{
+    max-width: 600px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
 }
 
 /* Adaptable responsivo */
@@ -303,51 +309,51 @@ footer{
 
 @media screen and (max-width: 767px){
     .sobre-mi-portafolio{
-       min-height: 2500px; 
-    } 
+        min-height: 2500px;
+    }
 }
 
 @media screen and (max-width: 524px){
     .sobre-mi-portafolio{
-       min-height: 2600px; 
-    } 
+        min-height: 2600px;
+    }
 }
 
 @media screen and (max-width: 518px){
     .sobre-mi-portafolio{
-       min-height: 2800px; 
-    } 
+        min-height: 2800px;
+    }
 }
 
 @media screen and (max-width: 486px){
     .sobre-mi-portafolio{
-       min-height: 3000px; 
-    } 
+        min-height: 3000px;
+    }
 }
 
 @media screen and (max-width: 456px){
     .sobre-mi-portafolio{
-       min-height: 3300px; 
-    } 
+        min-height: 3300px;
+    }
 }
 
 @media screen and (max-width: 428px){
     .sobre-mi-portafolio{
-       min-height: 3400px; 
-    } 
-    
+        min-height: 3400px;
+    }
+
     .overlay p{
         font-size: 18px;
     }
-    
+
     .overlay i{
         font-size: 40px;
     }
 }
 @media screen and (max-width: 415px){
     .sobre-mi-portafolio{
-       min-height: 3600px; 
-    } 
+        min-height: 3600px;
+    }
 }
 @media screen and (min-width: 700px){
     .hero-inferior-imagen{

@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response;
  * @author luisj
  */
 public class OtroRestClient {
-   
+
     private final String pathConfiguracion;
     private final Properties propiedades;
     private final Config config;
@@ -47,11 +47,16 @@ public class OtroRestClient {
         cliente = ClientBuilder.newClient();
         webTarget = cliente.target(baseUrl).path("otros");
     }
-    
-    public List<Otro> getAll(){
+
+    public List<Otro> getAll() {
         List<Otro> lista = new ArrayList<>();
         WebTarget resource = webTarget;
-        lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Otro>>(){});
+        try {
+            lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Otro>>() {
+            });
+        } catch (NullPointerException ex) {
+
+        }
         return lista;
     }
 }

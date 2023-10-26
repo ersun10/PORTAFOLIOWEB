@@ -6,6 +6,7 @@ package Beans;
 
 import Objects.Imagen;
 import Objects.Proyecto;
+import Objects.Tecnologia;
 import RestClients.ProyectoRestClient;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,10 @@ public class ProyectosManagedBean {
         this.tipo = this.client.getById(id).getTipo();
         this.carpetaImagenes = this.client.getById(id).getCarpetaImagenes();
         return this.client.getById(id);
+    }
+    
+    public List<Tecnologia> getTecnologias(int idProyecto){
+        return this.client.getTecnologias(idProyecto);
     }
 
     public String getNombre() {

@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response;
  * @author luisj
  */
 public class ExperienciaRestClient {
-    
+
     private final String pathConfiguracion;
     private final Properties propiedades;
     private final Config config;
@@ -32,8 +32,8 @@ public class ExperienciaRestClient {
     // Para la peticion
     private final Client cliente;
     private final WebTarget webTarget;
-    
-    public ExperienciaRestClient(){
+
+    public ExperienciaRestClient() {
         config = new Config();
         pathConfiguracion = config.getArchivo();
         propiedades = new Properties();
@@ -47,12 +47,16 @@ public class ExperienciaRestClient {
         cliente = ClientBuilder.newClient();
         webTarget = cliente.target(baseUrl).path("experiencias");
     }
-    
-    public List<Experiencia> getAll(){
+
+    public List<Experiencia> getAll() {
         List<Experiencia> lista = new ArrayList<>();
         WebTarget resource = webTarget;
-        lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Experiencia>>(){});
+        try {
+            lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Experiencia>>() {
+            });
+        } catch (NullPointerException ex) {
+        }
         return lista;
     }
-    
+
 }

@@ -6,6 +6,7 @@ package RestClients;
 
 import Config.Config;
 import Objects.Proyecto;
+import Objects.Tecnologia;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -51,17 +52,34 @@ public class ProyectoRestClient {
     public List<Proyecto> getAll() {
         List<Proyecto> lista = new ArrayList<>();
         WebTarget resource = webTarget;
-        lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Proyecto>>() {
-        });
+        try {
+            lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Proyecto>>() {
+            });
+        } catch (NullPointerException ex) {
+        }
         return lista;
     }
 
     public Proyecto getById(int id) {
         Proyecto proyecto = new Proyecto();
         WebTarget resource = cliente.target(baseUrl).path("proyectos/" + id);
-        proyecto = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<Proyecto>() {
-        });
+        try {
+            proyecto = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<Proyecto>() {
+            });
+        } catch (NullPointerException ex) {
+        }
         return proyecto;
+    }
+
+    public List<Tecnologia> getTecnologias(int idProyecto) {
+        List<Tecnologia> lista = new ArrayList<>();
+        try {
+            WebTarget resource = cliente.target(baseUrl).path("proyectos/TecByPro").queryParam("idProyecto", idProyecto);
+            lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Tecnologia>>() {
+            });
+        } catch (NullPointerException ex) {
+        }
+        return lista;
     }
 
 }

@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response;
  * @author luisj
  */
 public class TecnologiaRestClient {
-    
+
     private final String pathConfiguracion;
     private final Properties propiedades;
     private final Config config;
@@ -47,13 +47,16 @@ public class TecnologiaRestClient {
         cliente = ClientBuilder.newClient();
         webTarget = cliente.target(baseUrl).path("tecnologias");
     }
-    
-    public List<Tecnologia> getAll(){
+
+    public List<Tecnologia> getAll() {
         List<Tecnologia> lista = new ArrayList<>();
         WebTarget resource = webTarget;
-        lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Tecnologia>>(){});
+        try {
+            lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Tecnologia>>() {
+            });
+        } catch (NullPointerException ex) {
+        }
         return lista;
     }
-    
-}
 
+}

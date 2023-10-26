@@ -47,7 +47,10 @@ public class InformacionRestClient {
     public Informacion getInfo() {
         WebTarget resource = webTarget;
         Informacion info = new Informacion();
-        info = resource.request(MediaType.APPLICATION_JSON).get(Informacion.class);
+        try {
+            info = resource.request(MediaType.APPLICATION_JSON).get(Informacion.class);
+        } catch (NullPointerException ex) {
+        }
         return info;
     }
 

@@ -10,21 +10,43 @@
         <ui:composition template="./WEB-INF/PlantillaWeb.xhtml">
 
             <ui:define name="content">
+                <c:catch>
                 <h2 class="proyecto-title" style="text-align: center;">#{proyectosManagedBean.getById(request.getParameter("id"))}</h2>
-                <div class="container d-flex proyecto-imagenes">
-                    <div class="row proyecto-imagenes" style="margin: 20px;">
-                        <c:forEach var='item' items='#{imagenesManagedBean.getImagenes(application.getRealPath("") ,proyectosManagedBean.getById(request.getParameter("id")))}'>
-                            <img style="margin-bottom: 10px;" class="col-lg-3 col-md-6 col-xs-12" src="resources/Imagenes/Proyectos/#{item.nombre}" alt="#{item.nombre}"/>
-                        </c:forEach>
-                    </div>
+                <div class="slider-proyectos">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img style="height: 450px;" src="resources/Imagenes/Proyectos/#{proyectosManagedBean.nombre}/principal.jpg" class="d-block w-100" alt="principal"/>
+                            </div>
+                            <c:forEach var='item' items='#{imagenesManagedBean.getImagenes(application.getRealPath("") ,proyectosManagedBean.getById(request.getParameter("id")))}'>
+                                <div class="carousel-item">
+                                    <a href="resources/Imagenes/Proyectos/#{item.nombre}"><img style="height: 450px;" class="d-block w-100" src="resources/Imagenes/Proyectos/#{item.nombre}" alt="#{item.nombre}"/></a>
+                                </div>
+                            </c:forEach>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>  
                 </div>
                 <div class="info-proyecto">
                     <p class="proyecto-info">
                         <b><u>#{proyectosManagedBean.descripcion}</u></b><br/><br/>
+                        <i class="bi bi-code"></i>&#160;
+                        <c:forEach var='tecs' items='#{proyectosManagedBean.getTecnologias(request.getParameter("id"))}'>
+                            #{tecs.nombre}&#160;
+                        </c:forEach>
+                        <br/><br/>
                         <i class="bi bi-device-ssd-fill">&#160;&#160;#{proyectosManagedBean.tipo}</i><br/><br/>
                         #{proyectosManagedBean.carpetaImagenes}
                     </p>
                 </div>
+                </c:catch>
             </ui:define>
         </ui:composition>
 

@@ -23,8 +23,8 @@ import javax.ws.rs.core.Response;
  * @author luisj
  */
 public class HabilidadRestClient {
-    
-     private final String pathConfiguracion;
+
+    private final String pathConfiguracion;
     private final Properties propiedades;
     private final Config config;
     private final String baseUrl;
@@ -32,8 +32,8 @@ public class HabilidadRestClient {
     // Para la peticion
     private final Client cliente;
     private final WebTarget webTarget;
-    
-    public HabilidadRestClient(){
+
+    public HabilidadRestClient() {
         config = new Config();
         pathConfiguracion = config.getArchivo();
         propiedades = new Properties();
@@ -47,13 +47,16 @@ public class HabilidadRestClient {
         cliente = ClientBuilder.newClient();
         webTarget = cliente.target(baseUrl).path("habilidades");
     }
-    
-    public List<Habilidad> getAll(){
+
+    public List<Habilidad> getAll() {
         List<Habilidad> lista = new ArrayList<>();
         WebTarget resource = webTarget;
-        lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Habilidad>>(){});
+        try {
+            lista = resource.request(APPLICATION_JSON).get(Response.class).readEntity(new GenericType<List<Habilidad>>() {
+            });
+        } catch (NullPointerException ex) {
+        }
         return lista;
     }
-    
-}
 
+}
